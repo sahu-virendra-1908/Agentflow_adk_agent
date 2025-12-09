@@ -94,10 +94,9 @@ This multi-agent structure is orchestrated through **ADK-TS**.
 
 ---
 
-### 3. Futuristic, Single-Page UI (No Next.js)
+### 3. Futuristic, Single-Page UI 
 
-- Pure **static frontend** served via Express from `/public`
-- Built with **Tailwind CSS** (compiled locally, no CDN)
+
 - Features:
   - Dark, aurora-style card for the chat
   - “Quick Ideas” panel with one-click prompts:
