@@ -1,23 +1,21 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getRootAgent = void 0;
 // src/agents/agent.ts
-import { AgentBuilder } from "@iqai/adk";
-import { env } from "../env";
-import { getResearchAgent } from "./research-agent/agent";
-import { getAlertAgent } from "./alert-agent/agent";
-import { getPortfolioAgent } from "./portfolio-agent/agent";
-import { getBacktestAgent } from "./backtest-agent/agent";
-
-export const getRootAgent = () => {
-  const researchAgent = getResearchAgent();
-  const alertAgent = getAlertAgent();
-  const portfolioAgent = getPortfolioAgent();
-  const backtestAgent = getBacktestAgent();
-
-  return AgentBuilder.create("agentflow_root")
-    .withDescription(
-      "Root routing agent for AgentFlow. It decides whether the user wants DeFi research, alerts, portfolio risk analysis, or backtesting."
-    )
-    .withInstruction(
-      `
+const adk_1 = require("@iqai/adk");
+const env_1 = require("../env");
+const agent_1 = require("./research-agent/agent");
+const agent_2 = require("./alert-agent/agent");
+const agent_3 = require("./portfolio-agent/agent");
+const agent_4 = require("./backtest-agent/agent");
+const getRootAgent = () => {
+    const researchAgent = (0, agent_1.getResearchAgent)();
+    const alertAgent = (0, agent_2.getAlertAgent)();
+    const portfolioAgent = (0, agent_3.getPortfolioAgent)();
+    const backtestAgent = (0, agent_4.getBacktestAgent)();
+    return adk_1.AgentBuilder.create("agentflow_root")
+        .withDescription("Root routing agent for AgentFlow. It decides whether the user wants DeFi research, alerts, portfolio risk analysis, or backtesting.")
+        .withInstruction(`
 You are the ROOT coordinator agent for AgentFlow.
 
 You DO NOT answer directly. You ONLY route the user's message to exactly ONE sub-agent:
@@ -66,9 +64,9 @@ VERY IMPORTANT:
 - Do NOT answer the user yourself.
 - Use exactly ONE of the sub-agents per message.
 - Pass the original user message as-is when delegating.
-`.trim()
-    )
-    .withModel(env.LLM_MODEL)
-    .withSubAgents([researchAgent, alertAgent, portfolioAgent, backtestAgent])
-    .build();
+`.trim())
+        .withModel(env_1.env.LLM_MODEL)
+        .withSubAgents([researchAgent, alertAgent, portfolioAgent, backtestAgent])
+        .build();
 };
+exports.getRootAgent = getRootAgent;

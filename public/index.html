@@ -162,6 +162,8 @@
           >
             Quick Ideas
           </h2>
+
+          <!-- Quick idea buttons -->
           <div class="space-y-2.5 sm:space-y-3 text-xs sm:text-sm">
             <button
               class="w-full text-left rounded-2xl border border-slate-800 bg-slate-900/70 px-3 py-2 hover:border-emerald-500/60 hover:bg-slate-900/90 transition"
@@ -198,8 +200,29 @@
             >
               🧮 Analyze Portfolio Risk
             </button>
+
+            <!-- Backtest Button -->
+            <button
+              class="w-full text-left rounded-2xl border border-slate-800 bg-slate-900/70 px-3 py-2 hover:border-emerald-500/60 hover:bg-slate-900/90 transition"
+              data-template="Backtest this rule: buy ETH when it drops 5% over the last 90 days, starting with 1000 USD."
+            >
+              📈 Backtest ETH 5% Dip Strategy
+            </button>
           </div>
 
+          <!-- Backtest result panel (hidden by default, shown via JS) -->
+          <div
+            id="backtest-panel"
+            class="mt-2 rounded-2xl border border-slate-800 bg-slate-900/60 px-3 py-3 text-xs sm:text-sm text-slate-300 hidden"
+          >
+            <p class="font-medium text-slate-200 mb-1">Backtest Result</p>
+            <p id="backtest-summary" class="text-slate-400 mb-2">
+              <!-- Filled by JS -->
+            </p>
+            <canvas id="backtest-chart" class="w-full h-32"></canvas>
+          </div>
+
+          <!-- How it works -->
           <div
             class="mt-2 rounded-2xl border border-slate-800 bg-slate-900/60 px-3 py-3 text-xs sm:text-sm text-slate-300"
           >
@@ -210,9 +233,8 @@
             <ul class="list-disc list-inside text-slate-400">
               <li>🔍 <strong>Research Agent</strong> for market analysis</li>
               <li>⚙️ <strong>Alert Agent</strong> for automation rules</li>
-              <li>
-                🧮 <strong>Portfolio Agent</strong> for portfolio risk analysis
-              </li>
+              <li>🧮 <strong>Portfolio Agent</strong> for portfolio risk analysis</li>
+              <li>📈 <strong>Backtest Agent</strong> for historical strategy simulation</li>
             </ul>
           </div>
         </aside>
