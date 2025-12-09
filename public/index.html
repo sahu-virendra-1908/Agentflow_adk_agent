@@ -5,8 +5,8 @@
     <title>AgentFlow – DeFi AI Agent</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Local compiled Tailwind CSS -->
+    <link rel="stylesheet" href="/styles.css" />
 
     <style>
       /* Custom scrollbar for chat */
@@ -42,8 +42,8 @@
             </span>
           </h1>
           <p class="mt-2 text-sm sm:text-base text-slate-400 max-w-xl">
-            Natural language in. On-chain strategies and automation out.
-            Ask anything about BTC, ETH, DeFi risk, or set price/yield alerts.
+            Natural language in. On-chain strategies and automation out. Ask
+            anything about BTC, ETH, DeFi risk, or set price/yield alerts.
           </p>
         </div>
 
@@ -66,7 +66,9 @@
       </header>
 
       <!-- Main content -->
-      <main class="grid grid-cols-1 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] gap-4 lg:gap-6">
+      <main
+        class="grid grid-cols-1 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] gap-4 lg:gap-6"
+      >
         <!-- Chat card -->
         <section
           class="relative overflow-hidden rounded-3xl border border-slate-800 bg-gradient-to-b from-slate-900/70 to-slate-950/90 shadow-[0_0_40px_rgba(15,23,42,0.8)]"
@@ -155,7 +157,9 @@
         <aside
           class="space-y-4 lg:space-y-5 rounded-3xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5"
         >
-          <h2 class="text-sm font-semibold text-slate-200 uppercase tracking-wide">
+          <h2
+            class="text-sm font-semibold text-slate-200 uppercase tracking-wide"
+          >
             Quick Ideas
           </h2>
           <div class="space-y-2.5 sm:space-y-3 text-xs sm:text-sm">
@@ -165,23 +169,34 @@
             >
               📊 BTC & ETH Overview
             </button>
+
             <button
               class="w-full text-left rounded-2xl border border-slate-800 bg-slate-900/70 px-3 py-2 hover:border-emerald-500/60 hover:bg-slate-900/90 transition"
               data-template="Alert me when BTC goes above 80000 USD."
             >
               🔔 BTC Price Alert
             </button>
+
             <button
               class="w-full text-left rounded-2xl border border-slate-800 bg-slate-900/70 px-3 py-2 hover:border-emerald-500/60 hover:bg-slate-900/90 transition"
               data-template="Set an alert when any ETH DeFi APY drops below 5%."
             >
               📉 ETH APY Alert
             </button>
+
             <button
               class="w-full text-left rounded-2xl border border-slate-800 bg-slate-900/70 px-3 py-2 hover:border-emerald-500/60 hover:bg-slate-900/90 transition"
               data-template="Explain DeFi risk in simple terms for a beginner."
             >
               🧠 Explain DeFi Risk
+            </button>
+
+            <!-- Portfolio Risk Button -->
+            <button
+              class="w-full text-left rounded-2xl border border-slate-800 bg-slate-900/70 px-3 py-2 hover:border-emerald-500/60 hover:bg-slate-900/90 transition"
+              data-template="Analyze my portfolio risk: 60% BTC, 25% ETH, 10% USDC, 5% meme coins. I am a low-risk investor."
+            >
+              🧮 Analyze Portfolio Risk
             </button>
           </div>
 
@@ -190,11 +205,14 @@
           >
             <p class="font-medium text-slate-200 mb-1">How it works</p>
             <p class="mb-1">
-              Your message is routed by a root agent into either:
+              Your message is routed by a root agent into one of:
             </p>
             <ul class="list-disc list-inside text-slate-400">
               <li>🔍 <strong>Research Agent</strong> for market analysis</li>
               <li>⚙️ <strong>Alert Agent</strong> for automation rules</li>
+              <li>
+                🧮 <strong>Portfolio Agent</strong> for portfolio risk analysis
+              </li>
             </ul>
           </div>
         </aside>
